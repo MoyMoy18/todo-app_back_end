@@ -2,6 +2,8 @@ class TodoController < ApplicationController
     def index 
     end
     def show
+        @todo_description = Todo.find_by_id(params[:id]).description
+=begin
         if params[:id].to_i == 1
             @todo_name = "Complete Math Homework"
             @todo_description = "Problems 7-13"
@@ -14,10 +16,10 @@ class TodoController < ApplicationController
         elsif params[:id].to_i == 4
             @todo_name = "Complete English Homework"
             @todo_description = "Read 1984"
-        elsif params[:id].to_i ==5 
+        elsif params[:id].to_i == 5
             @todo_name = "Complete Digital Photography Homework"
             @todo_description = "Take Landscape Photographs"
-        elsif params[:id].to_i ==6 
+        elsif params[:id].to_i == 6
             @todo_name = "Complete Japanese Homework"
             @todo_description = "Practice Kanji"
         elsif params[:id].to_i ==7 
@@ -31,6 +33,8 @@ class TodoController < ApplicationController
             @todo_description = "Read a Crap ton of Books"
         else
             @todo_name = "This todo does not exist"
+
         end
+=end
     end
 end
