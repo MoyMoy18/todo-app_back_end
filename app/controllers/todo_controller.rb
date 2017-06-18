@@ -4,6 +4,12 @@ class TodoController < ApplicationController
     def new
         
     end
+    def create
+         t = Todo.new
+  t.description = params['description']
+  t.save
+  redirect_to "/todo/show/#{ t.id }"
+    end
     def show
         @todo_description = Todo.find_by_id(params[:id]).description
 =begin
