@@ -1,6 +1,9 @@
 class TodoController < ApplicationController 
     def index 
     end
+    def new
+        
+    end
     def show
         @todo_description = Todo.find_by_id(params[:id]).description
 =begin
